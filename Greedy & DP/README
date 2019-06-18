@@ -1,0 +1,53 @@
+============================ Tema 1 - Greedy & DP ============================
+Nume: Craciunoiu Cezar
+Grupa: 324CA
+
+In rezolvarea temei s-au abordat primele 3 probleme date. S-a incercat sa se
+obtina rezolvari cat mai eficiente in timp si spatiu, dar sa fie si concise.
+In toate problemele s-au folosit numere pe 64 de biti pentru a se evite pe cat
+posibil overflow-ul. Limbajul folosit este C++, datorita flexibilitatii de
+care da dovada acesta.
+
+Problema I
+In prima problema, s-a observat ca cea mai buna solutie se obtine aplicandu-se
+ideea de greedy. Dupa ce s-au citit datele de la intrare se sorteaza
+descrescator vectorul si se incep sa se imparta numerele alternativ. De multe
+ori, primul jucator(Tuzgu) castiga deoarece el alege primul numar, care e si
+cel mai mare. In cele mai multe cazuri diferente e pozitiva, deoarece el
+reuseste sa prinda mai multe numere mari. Pentru ca diferenta este mereu
+pozitiva, aceasta se afiseaza in modul. Complexitatea temporala a problemei
+este data de sortarea vectorului -> O(N*logN). Cea spatiala e data de
+retinerea datelor de intrare, adica O(N).
+
+Problema II
+In a doua problema, desi pare a fi tot de programare dinamica, s-a incercat
+totusi o solutie greedy. Inainte de a se citi vectorul se verifica daca
+numarul de elemente din vector este egal cu numarul elementelor ce se doresc
+scoase. In acest caz jocul nu se mai joaca, diferenta fiind direct 0. Daca
+jocul se poate totusi juca, atunci se sorteaza, ca la prima problema, vectorul
+descrescator. Tuzgu ia primul element, si apoi elimina K urmatoarele elemente.
+Dupa, jocul se joaca de la urmatoarea pozitie deoarece primul element a fost
+ales deja. Jocul se joaca ca la prima problema. Se afiseaza diferenta si se
+observa ca, desi rezolvarea nu functioneaza pe un caz general, in anumite
+cazuri este suficienta, iar in rest se apropie foarte mult de solutia optima.
+Complexitatea temporala este tot O(N*logN) si cea spatiala de O(N).
+
+Problema III
+In problema a treia, s-a folosit ideea de pe linkul din bibliografie. Se
+observa ca cea mai buna solutie se poate obtine, folosind ideea de programare
+dinamica. Se citesc datele si initializeaza cu 0 matricea folosita la
+retinerea datelor. Se pastreaza si o variabila cu suma tuturor numerelor.
+Incepe, apoi, sa se parcurga matricea, ce se completeaza pe diagonala. Se
+observa ca la fiecare pas sunt 3 cazuri, in functie de pozitia unde se afla
+in matrice pasul curent. Pana la urma, totul se reduce la o alegere din doua,
+daca jucatorul v-a lua primul element sau pe ultimul din cele ramase. Acest
+lucru este ilustrat prin alegerea maximului dintre sumele ce se pot obtine,
+alegand primul sau ultimul element. La final se face o scadere pentru a se
+afisa diferenta dintre scorul celor 2. Complexitatea temporala este de
+O(N^2) deoarece trebuie ca sa se completeze matricea de programare dinamica
+(chit ca aceasta este superior triunghiulara). Spatial, solutia este tot de
+O(N^2), deoarece matricea este de N*N elemente.
+
+Bibliografie
+https://www.geeksforgeeks.org/optimal-strategy-for-a-game-dp-31/
+

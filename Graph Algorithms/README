@@ -1,0 +1,38 @@
+=================================Tema 2 - PA===================================
+Nume: Craciunoiu Cezar
+Grupa: 324CA
+
+-- Problema 1 --
+Pentru a rezolva problema data mai intai s-a sortat vectorul de distante pentru
+a se reconstrui graful ca o lista. Dupa aceea se verifica daca exista inca o
+radacina adica daca mai exista un nod de start.
+Dupa aceea se trece o data prin vectorul sortat si se verifica daca se poate
+forma graful, adica se verifica daca distanta dintre 2 elemente e de maxim 1.
+Daca toate conditiile anterioare au fost indeplinite se trece prin fiecare
+element si cat timp elementele sunt egale se undesc copii de acelasi parinte,
+dupa aceea se creste adancimea.
+Timp: O(NlogN) Spatiu: O(N)
+
+-- Problema 2 --
+Problema a fost realizata (ca structura) intr-un mod asemanator cu
+laboratoarele. Datele sunt citite in constructor, iar executia incepe din
+"componenta_conexa_maxima". Ideea algoritmului este de a porni un BFS din
+fiecare celula a matricei. Pentru stabilirea limitei din conditie se fixeaza
+minimul ca acea celula si doar se creste maximul pana cand diferenta ajunge k.
+BFS-ul a fost modificat pentru a rula pe matrice, respectiv se trece prin cele
+4 directii si se verifica daca sunt valide.
+Timp: O(N^2 * M ^2) Spatiu: O(N * M);
+
+-- Problema 3 --
+Pentru problema 3 s-a folosit algoritmul Dijkstra modificat pentru a functiona
+pentru structura datelor de la intrare. De asemenea, la final se reconstituie
+drumul de la destinatie la sursa si se retine de fiecare data cand s-a schimbat
+timpul de muchii. La final se adauga la costul drumului de la 1 la N si
+penalizarea data de schimbarea muchiilor.
+Timp: O(MlogN) Spatiu: O(N*M)
+
+-- Problema 4 --
+In mod asemanator ca la problema 3 se ruleaza algoritmul Dijkstra, dar de
+aceasta data se retin toate tipurile de muchii care se schimba intr-un set.
+Dupa aceea se trece prin acest set si se adauga penalizarea la costul final.
+Timp: O(MlogN) Spatiu: O(N*M)
